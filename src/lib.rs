@@ -64,7 +64,22 @@ pub fn distance(lhs: &str, rhs: &str) -> usize {
     //         }
     //
         for (l_index, l_char) in lhs.chars().enumerate() {
-            // Do teh things here
+            // Did teh things here
+            let cost = if l_char == r_char {
+                IDENTITY_COST
+            } else {
+                SUBSTITUTION_COST
+            };
+
+            use ::std::cmp::min;
+
+            v1[l_index + 1] = min(
+                v0[l_index] + cost,
+                min(
+                    v1[l_index]     + DELETION_COST,
+                    v0[l_index + 1] + INSERTION_COST,
+                )
+            );
         }
 
     //
