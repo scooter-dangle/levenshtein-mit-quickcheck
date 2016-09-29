@@ -44,6 +44,9 @@ pub fn distance(lhs: &str, rhs: &str) -> usize {
     //     for (int i = 0; i < s.Length; i++)
     //     {
     //
+    for (r_index, r_char) in rhs.chars().enumerate() {
+        let _: usize = r_index;
+        let _: char = r_char;
 
     //
     //         // calculate v1 (current row distances) from the previous row v0
@@ -73,6 +76,7 @@ pub fn distance(lhs: &str, rhs: &str) -> usize {
     //     return v1[t.Length];
     // }
     //
+    }
 
     3
 }
