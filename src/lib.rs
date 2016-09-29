@@ -63,6 +63,12 @@ mod tests {
         assert_eq!(distance("Saturday", "Saturday"), 0);
     }
 
+    #[test]
+    fn null_eighty() {
+        assert_eq!(distance("\u{0}", "\u{80}"), SUBSTITUTION_COST);
+        assert_eq!(distance("\u{80}", "\u{0}"), SUBSTITUTION_COST);
+    }
+
     // Invariants:
     //
     // - The edit distance between any string and itself is 0.
