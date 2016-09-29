@@ -18,6 +18,7 @@ pub fn distance(lhs: &str, rhs: &str) -> usize {
     //     if (s.Length == 0) return t.Length;
     //     if (t.Length == 0) return s.Length;
     //
+    if lhs.is_empty() || rhs.is_empty() { return 0; }
 
     //
     //     // create two work vectors of integer distances
