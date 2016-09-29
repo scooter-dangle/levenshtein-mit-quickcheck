@@ -1,7 +1,3 @@
-#[cfg(test)]
-#[macro_use]
-extern crate quickcheck;
-
 // (Used in tests)
 #[allow(unused)]
 pub const INSERTION_COST:    usize = 1;
