@@ -58,4 +58,12 @@ mod tests {
     fn saturday_saturday() {
         assert_eq!(distance("Saturday", "Saturday"), 0);
     }
+
+    // Invariants:
+    //
+    // - The edit distance between any string and itself is 0.
+    //   I.e.: `distance(a, a) == 0`
+    //
+    // - The edit distance is symmetric.
+    //   I.e.: `distance(a, b) == distance(b, a)`
 }
