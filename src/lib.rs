@@ -90,13 +90,13 @@ pub fn distance(lhs: &str, rhs: &str) -> usize {
     //
         v0.clone_from_slice(&v1);
 
+    }
     //
     //     return v1[t.Length];
     // }
     //
-    }
 
-    3
+    v1.last()
 }
 
 #[cfg(test)]
