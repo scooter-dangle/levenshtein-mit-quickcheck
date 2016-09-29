@@ -45,8 +45,6 @@ pub fn distance(lhs: &str, rhs: &str) -> usize {
     //     {
     //
     for (r_index, r_char) in rhs.chars().enumerate() {
-        let _: usize = r_index;
-        let _: char = r_char;
 
     //
     //         // calculate v1 (current row distances) from the previous row v0
@@ -55,6 +53,7 @@ pub fn distance(lhs: &str, rhs: &str) -> usize {
     //         //   edit distance is delete (i+1) chars from s to match empty t
     //         v1[0] = i + 1;
     //
+        v1[0] = r_index + INSERTION_COST;
 
     //
     //         // use formula to fill in the rest of the row
@@ -64,6 +63,9 @@ pub fn distance(lhs: &str, rhs: &str) -> usize {
     //             v1[j + 1] = Minimum(v1[j] + 1, v0[j + 1] + 1, v0[j] + cost);
     //         }
     //
+        for (l_index, l_char) in lhs.chars().enumerate() {
+            // Do teh things here
+        }
 
     //
     //         // copy v1 (current row) to v0 (previous row) for next iteration
@@ -71,6 +73,7 @@ pub fn distance(lhs: &str, rhs: &str) -> usize {
     //             v0[j] = v1[j];
     //     }
     //
+        v0.clone_from_slice(&v1);
 
     //
     //     return v1[t.Length];
