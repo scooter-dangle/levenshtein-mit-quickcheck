@@ -96,7 +96,7 @@ pub fn distance(lhs: &str, rhs: &str) -> usize {
     // }
     //
 
-    v1.last()
+    v1.last().unwrap()
 }
 
 #[cfg(test)]
