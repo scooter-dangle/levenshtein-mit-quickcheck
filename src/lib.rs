@@ -25,8 +25,8 @@ pub fn distance(lhs: &str, rhs: &str) -> usize {
     //     int[] v0 = new int[t.Length + 1];
     //     int[] v1 = new int[t.Length + 1];
     //
-    let v0 = (0..(lhs.len() + 1)).collect::<Vec<_>>();
-    let v1 = v0.clone();
+    let mut v0 = (0..(lhs.len() + 1)).collect::<Vec<_>>();
+    let mut v1 = v0.clone();
 
     //
     //     // initialize v0 (the previous row of distances)
