@@ -12,6 +12,7 @@ pub fn distance(lhs: &str, rhs: &str) -> usize {
     //     // degenerate cases
     //     if (s == t) return 0;
     //
+    if lhs == rhs { return 0; }
 
     //
     //     if (s.Length == 0) return t.Length;
@@ -66,11 +67,7 @@ pub fn distance(lhs: &str, rhs: &str) -> usize {
     // }
     //
 
-    if lhs == rhs {
-        0
-    } else {
-        3
-    }
+    3
 }
 
 #[cfg(test)]
