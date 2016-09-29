@@ -14,7 +14,7 @@ pub fn distance(lhs: &str, rhs: &str) -> usize {
 
     if lhs.is_empty() || rhs.is_empty() { return 0; }
 
-    let mut v0 = (0..(lhs.len() + 1)).collect::<Vec<_>>();
+    let mut v0 = (0..(lhs.chars().count() + 1)).collect::<Vec<_>>();
     let mut v1 = v0.clone();
 
     for (r_index, r_char) in rhs.chars().enumerate() {
