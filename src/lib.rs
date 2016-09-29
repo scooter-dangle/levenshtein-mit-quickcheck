@@ -1,3 +1,7 @@
+#[cfg(test)]
+#[macro_use]
+extern crate quickcheck;
+
 pub const INSERTION_COST:    usize = 1;
 pub const DELETION_COST:     usize = 1;
 pub const SUBSTITUTION_COST: usize = 1;
@@ -63,7 +67,12 @@ mod tests {
     //
     // - The edit distance between any string and itself is 0.
     //   I.e.: `distance(a, a) == 0`
-    //
+    quickcheck! {
+        fn one_string(string: String) -> bool {
+            distance(&string, &string) == 0
+        }
+    }
+
     // - The edit distance is symmetric.
     //   I.e.: `distance(a, b) == distance(b, a)`
 }
