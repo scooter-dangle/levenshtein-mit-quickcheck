@@ -75,4 +75,9 @@ mod tests {
 
     // - The edit distance is symmetric.
     //   I.e.: `distance(a, b) == distance(b, a)`
+    quickcheck! {
+        fn two_strings(string1: String, string2: String) -> bool {
+            distance(&string1, &string2) == distance(&string2, &string1)
+        }
+    }
 }
