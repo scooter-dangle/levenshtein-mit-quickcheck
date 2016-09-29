@@ -36,6 +36,10 @@ pub fn distance(lhs: &str, rhs: &str) -> usize {
     //         v0[i] = i;
     //
 
+    //                ∧
+    //                |
+    //  Already done, that, yo.
+
     //
     //     for (int i = 0; i < s.Length; i++)
     //     {
