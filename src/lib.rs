@@ -12,7 +12,9 @@ pub fn distance(lhs: &str, rhs: &str) -> usize {
 
     if lhs == rhs { return 0; }
 
-    if lhs.is_empty() || rhs.is_empty() { return 0; }
+    if lhs.is_empty() || rhs.is_empty() {
+        return lhs.chars().chain(rhs.chars()).count();
+    }
 
     let mut v0 = (0..(lhs.chars().count() + 1)).collect::<Vec<_>>();
     let mut v1 = v0.clone();
